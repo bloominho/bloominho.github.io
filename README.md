@@ -10,4 +10,8 @@ Test changes with:
 jekyll serve
 ```
 
-Push to the ML web directory:
+build:
+
+```
+jekyll build
+```
