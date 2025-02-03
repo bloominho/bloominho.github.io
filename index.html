@@ -5,17 +5,20 @@ layout: default
 <div class="docs-section" id="about">
   <h4>About</h4>
   <p>
-    I am a Ph.D. candidate in Machine Learning & Natural Language Processing at <a
-      href="https://www.informatik.tu-darmstadt.de/ukp/ukp_home/index.en.jsp">UKP Lab</a> in <a
-      href="https://www.tu-darmstadt.de/index.en.jsp">TU Darmstadt</a>, supervised by <a
-      href="https://www.informatik.tu-darmstadt.de/ukp/ukp_home/head_ukp/index.en.jsp">Prof. Iryna Gurevych</a>.
-    My main research interests are question answering, reasoning, and explainability in large language models.
-    Previously, I worked at the Coleridge Initiative, where I co-organized the Kaggle Competition <a
-      href="https://www.kaggle.com/c/coleridgeinitiative-show-us-the-data/overview"><i>Show US the Data</i></a>.
-    I got my master's degree from the <a href="https://cs.kaist.ac.kr/">School of Computing</a> at <a
-      href="https://www.kaist.ac.kr/en/">KAIST</a>, where
-    I was a research assistant at IR&NLP Lab and was advised by <a
-      href="http://ir.kaist.ac.kr/member/professor/">Professor Sung-Hyon Myaeng</a>.
+    Hello! I am an undergraduate stduent studying Electrical and Electronics Engineering at <a href="https://yonsei.ac.kr">Yonsei Unviersity</a> in Seoul, Korea.
+  </p>
+  <p style="margin-bottom: 5px;">
+    My research interests lie in heterogeneous computing and software-hardware co-optimization. Specifically, I am interested in:
+  </p>
+  <ul style="padding-left: 10px;">
+    <li>
+      <span style="font-weight: bold;">CPU-GPU Integration</span>: I am interested in exploring different levels of integration between CPUs and GPUs to address fundamental inefficiencies in current architectures, where CPUs and GPUs operate as seperate devices. To resolve these problems, I am both interested in the hardware architectures and software optimization / scheduling policies of GPUs.
+    </li>
+    <li>
+      <span style="font-weight: bold;">GPU Compiler Optimization</span>: Programmers face serious complexities when optimizing their code for GPUs. I am particularly interested in developing compiler techniques that make GPU programming more accessible and enable better optimization across various GPU architectures.
+    </li>
+  </ul>
+  Through my research, I aim to build a more powerful computing environment in response to emerging workloads.
   </p>
 </div>
 
@@ -23,253 +26,41 @@ layout: default
 <div class="docs-section" id="education">
   <h4>Education</h4>
   <div class="paper">
-    <p class="title"><b>TU Darmstadt<b style="float:right;">June 2022 - currently</b></b></p>
+    <p class="title"><b>Yonsei University<b style="float:right;">March 2019 - currently</b></b></p>
 
-    <p>Ph.D. in Computer Science</p>
+    <p>B.S. in Electrical and Electronics Engineering</p>
     <p></p>
-  </div>
-
-  <div class="paper">
-    <p class="title"><b>KAIST<b style="float:right;">Sept. 2018 - March 2021</b></b></p>
-
-    <p>M.S. in Computer Science</p>
-    <p></p>
-  </div>
-
-  <div class="paper">
-    <p class="title"><b>University of Malaga <b style="float:right;">Sept. 2012 - July 2017</b></b></p>
-    <p>B.Sc. in Computer Science & Engineering (<i>Summa Cum Laude</i>)</p>
-    <p></p>
-  </div>
-</div>
-
-<!-- ========== PUBLICATIONS ========== -->
-<div class="docs-section" id="publications">
-  <h4>Publications</h4>
-
-  <!-- <p>Most recent publications on <a href="{{ site.data.main_info.google_scholar }}" target="_blank">Google Scholar</a>.<br/> -->
-  <sup>*</sup> indicates equal contribution.
-  </p>
-
-  <ul class="tab-nav">
-    <li>
-      <div class="button active" data-ref="#papers-selected">Selected</div>
-    </li>
-    <li>
-      <div class="button" data-ref="#papers-all">All</div>
-    </li>
-  </ul>
-
-  <div class="tab-content">
-    <div class="tab-pane active" id="papers-selected">
-      {% assign selected_papers = site.data.publications.papers | where: "selected", "y" %}
-      {% for paper in selected_papers %}
-      <div class="paper">
-        <p class="title"><b>{{ paper.title }}</b></p>
-        <p>{{ paper.authors }}</p>
-        <p><i>{{ paper.venue }}</i></p>
-        <div class="paper-buttons">
-          {% if paper.paper_pdf %}
-          <a class="button" href="{{ paper.paper_pdf }}" target="_blank">Paper</a>
-          {% endif %}
-
-          {% if paper.slides %}
-          <a class="button" href="{{ paper.slides | prepend: site.baseurl }}" target="_blank">Slides</a>
-          {% endif %}
-
-          {% if paper.poster %}
-          <a class="button" href="{{ paper.poster | prepend: site.baseurl }}" target="_blank">Poster</a>
-          {% endif %}
-
-          {% if paper.video %}
-          <a class="button" href="{{ paper.video }}" target="_blank">Video</a>
-          {% endif %}
-
-          {% if paper.website %}
-          <a class="button" href="{{ paper.website }}" target="_blank">Website</a>
-          {% endif %}
-
-          {% if paper.code %}
-          <a class="button" href="{{ paper.code }}" target="_blank">Code</a>
-          {% endif %}
-        </div>
-      </div>
-      {% endfor %}
-    </div>
-
-    <div class="tab-pane" id="papers-all">
-      {% for paper in site.data.publications.papers %}
-      <div class="paper">
-        <p class="title"><b>{{ paper.title }}</b></p>
-        <p>{{ paper.authors }}</p>
-        <p><i>{{ paper.venue }}</i></p>
-        <div class="paper-buttons">
-          {% if paper.paper_pdf %}
-          <a class="button" href="{{ paper.paper_pdf | prepend: site.baseurl }}" target="_blank">Paper</a>
-          {% endif %}
-
-          {% if paper.slides %}
-          <a class="button" href="{{ paper.slides | prepend: site.baseurl }}" target="_blank">Slides</a>
-          {% endif %}
-
-          {% if paper.poster %}
-          <a class="button" href="{{ paper.poster | prepend: site.baseurl }}" target="_blank">Poster</a>
-          {% endif %}
-
-          {% if paper.video %}
-          <a class="button" href="{{ paper.video }}" target="_blank">Video</a>
-          {% endif %}
-
-          {% if paper.website %}
-          <a class="button" href="{{ paper.website }}" target="_blank">Website</a>
-          {% endif %}
-
-          {% if paper.code %}
-          <a class="button" href="{{ paper.code }}" target="_blank">Code</a>
-          {% endif %}
-        </div>
-      </div>
-      {% endfor %}
-    </div>
   </div>
 </div>
 
 <!-- ========== PROJECTS ========== -->
-<!-- <div class="docs-section" id="projects">
+<div class="docs-section" id="projects">
   <h4>Projects</h4>
-
-  <ul class="tab-nav">
-    <li><div class="button active" data-ref="#projects-selected">Selected</div></li>
-    <li><div class="button" data-ref="#projects-all">All</div></li>
-  </ul>
-
-  <div class="tab-content">
-    <div class="tab-pane active" id="projects-selected">
-      {% assign selected_projects = site.data.projects.projects | where: "selected", "y" %}
-      {% for project in selected_projects %}
-        {% assign index_modulo = forloop.index0 | modulo:3 %}
-        {% if index_modulo == 0 %}
-          <div class="row">
-        {% endif %}
-
-          <div class="four columns">
-            <div class="project-container">
-
-                <div class="project-image-container">
-                  <a href="{{ project.url }}">
-                    <img src="{{ project.thumbnail }}" class="u-max-full-width" />
-                  </a>
-                </div>
-
-                <div class="project-caption">
-                  <b>{{ project.title }}</b> <br/>
-                  {{ project.subtitle }}
-                </div>
-
-            </div>
-          </div>
-
-        {% if index_modulo == 2 %}
-          </div>
-        {% endif %}
-      {% endfor %}
-    </div>
-
-    <div class="tab-pane" id="projects-all">
-      {% for project in site.data.projects.projects %}
-        {% assign index_modulo = forloop.index0 | modulo:3 %}
-        {% if index_modulo == 0 %}
-          <div class="row">
-        {% endif %}
-
-          <div class="four columns">
-            <div class="project-container">
-
-                <div class="project-image-container">
-                  <a href="{{ project.url }}">
-                    <img src="{{ project.thumbnail }}" class="u-max-full-width" />
-                  </a>
-                </div>
-
-                <div class="project-caption">
-                  <b>{{ project.title }}</b> <br/>
-                  {{ project.subtitle }}
-                </div>
-
-            </div>
-          </div>
-
-        {% if index_modulo == 2 %}
-          </div>
-        {% endif %}
-      {% endfor %}
-    </div>
+  <div class="paper">
+    <p class="title"><b>Limitation of Optimization Targets on Loop Optimizers<b style="float:right;">March - June 2024</b></b></p>
+    <p>Undergraduate Thesis Student<a href="http://corelab.yonsei.ac.kr" style="float:right;">Corelab @ Yonsei University</a></p>
+    <p style="padding-left:10px;">LLVM's polyhedral optimizer, Polly, had difficulty optimizing matrix multiplication codes with dynamically bounded loops. This was because when Polly optimized its outer structures first, the transformation of (inner) nested for loops hindered effective optimization of the inner loops. To address this issue, I redesigned Polly to optimize smaller for loops first before proceeding to larger ones. As a result, a 3.5× speed improvement was achieved.</p>
   </div>
 
-</div> -->
-<div class="docs-section" id="teaching">
-  <h4>Teaching</h4>
-  <p>
-    I am always looking for undergraduate/master students interested in doing their thesis on NLP.
-    If you are interested in any of my research topics, please contact me as soon as possible, I try to supervise one
-    student every semester.
-    I also supervise <i>Hiwis</i> (research assistants), but this depends on projects availability.
-  </p>
-  <ul>
-    I've been teaching the following courses:
-    <li>
-      Guest lecture about QA in the NLP course (Spring Semester 23) @ Koç University (Instructor: Prof. Gözde Gül
-      Şahin).
-    </li>
-    <li>
-      Guest lecture about QA in the course NLP4Web (Winter Semester 22/23) @ TU Darmstadt (Instructor: Prof. Iryna
-      Gurevych).
-    </li>
-    <li>
-      Data Analysis Software Project for Natural Language (Winter Semester 22/23) @ TU Darmstadt.
-    </li>
-    <li>
-      Guest Lecture about QA in the course <a href="https://github.com/dl4nlp-tuda/deep-learning-for-nlp-lectures">Deep
-        Learning for NLP (2022)</a>@TU Darmstadt (Instructor: Prof. Ivan Habernal).
-    </li>
-  </ul>
-  <ul>
-    Supervised BSc/Msc Students:
-    <li>
-      Hao Zhang: Groudning Generative LM with Knwoledge Graphs for Commonsense Reasoning
-    </li>
-    <li>
-      Sewin Tariverdian: Fusing Structured with Unstructured Modalities for Multi-Hop QA
-    </li>
-    <li>
-      Soulaima Khamari: NLI as a Multi-Agent System for QA
-    </li>
-  </ul>
-</div>
-<!-- ========== Service ========== -->
-<div class="docs-section" id="service">
-  <h4>Service</h4>
-  <ul>
-    Reviewer:
-    <li>
-      ACL Rolling Review: Nov. 2021, - Today; COLING 2022, EMNLP 2021
-    </li>
-  </ul>
-  <ul>
-    Invited Talks:
-    <li>
-      UKP-SQuARE @ Huawei Search Engine Academic Workshop, November 2022
-    </li>
-    <li>
-      <a href="https://scads.ai/education/summer-schools/scads-ai-summer-school-2022/prof-iryna-gurevychharitz-puerto/">ScaDS.AI
-        Machine Learning: QA Research, July 2022</a>
-    </li>
-    <li>
-      <a
-        href="https://anchor.fm/elia-ia/episodes/Ep-14---Haritz-Puerto-UKP-Lab---Haciendo-que-la-IA-resuelva-preguntas-e1ekdgl">We
-        Decentralize Tech Podcast: Making AI Answer Questions (in Spanish), February 2022</a>
-    </li>
-  </ul>
+  <div class="paper">
+    <p class="title"><b>Development of near-data computing solution targeting MoE LLMs <b style="float:right;">June - Aug. 2024</b></b></p>
+    <p>Undergraduate Research Assistant<a href="http://corelab.yonsei.ac.kr" style="float:right;">CAPP Lab @ Seoul National University</a></p>
+    <p style="padding-left:10px;">
+      MoE models cannot be fully stored in GPU memory due to their large number of parameters, which leads to memory bottlenecks. To address this challenge, we developed <a href="https://arxiv.org/pdf/2405.18832">MoNDE</a>, a near-memory processing device.
+
+      In this project, I was responsible for implementing MoNDE on an FPGA to demonstrate its performance. I also designed a protocol enabling concurrent processing and memory transfer between the FPGA device and the host, and successfully integrated it into our system. This new protocol resulted in a 1.9× speed improvement.
+    </p>
+      
+    <p style="padding-left:10px;">
+      <span onclick="window.open(`https://github.com/bloominho/MoNDE`)" style="cursor: pointer">
+        <i class="fa fa-github" aria-hidden="true"></i>
+      </span>
+      <a href="https://arxiv.org/pdf/2405.18832">
+        Github
+      </a>
+    </p>
+    
+  </div>
 
 </div>
 
@@ -277,7 +68,7 @@ layout: default
 <div class="docs-section" id="resume">
   <h4>Vitæ</h4>
 
-  <p>Full Resume in <a href={{ "/assets/cv/cv_web.pdf" | prepend: site.baseurl }} target="_blank">PDF</a>.</p>
+  <p>Full Resume in <a href={{ '/assets/cv/CV_AndrewPark.pdf' | prepend: site.baseurl }} target="_blank">PDF</a>.</p>
 
   <!-- The Timeline -->
   <ul class="timeline">
@@ -300,7 +91,3 @@ layout: default
 </div>
 
 </div>
-
-<!-- Cookie Declaration -->
-<!-- <script id="CookieDeclaration" src="https://consent.cookiebot.com/f84b82c9-120e-4828-a565-376296f67244/cd.js" type="text/javascript" async></script> -->
-<!-- End Cookie Declaration -->
