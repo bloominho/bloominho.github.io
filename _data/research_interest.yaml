@@ -1,0 +1,10 @@
+sub_interest:
+  - topic: "GPU Hardware Architecture"
+    description: "Focused on improving Kernel Launch Latency, CPU-GPU scheduling/coherency, and solutions to the Memory Wall problem through novel hardware architectures and compiler-level scheduling."
+
+  - topic: "GPU Code Optimization & Transformation"
+    description: "Interested in making GPU programming easier and more portable. This includes:"
+    sub_description:
+      - "Automatic conversion of CPU code to GPU code."
+      - "Auto-optimization of GPU code for various hardware configurations. (for instance, Triton)"
+      - "Developing cross-vendor compilers (e.g., for NVIDIA, AMD) to enable hardware-agnostic programming. (MLIR is one of the things on my desk)"

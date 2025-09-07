@@ -1,140 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Cookie Banner -->
-  <!-- <script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="f84b82c9-120e-4828-a565-376296f67244" data-blockingmode="auto" type="text/javascript"></script> -->
-  <!-- End Cookie Banner -->
-  
-  <!-- Google Tag Manager -->
-  <!-- <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-  })(window,document,'script','dataLayer','GTM-K5TX748');</script> -->
-  <!-- End Google Tag Manager -->
-  
-  <!-- Basic Page Needs
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <!-- Basic Page Needs –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <meta charset="utf-8">
   <title>{{ site.data.main_info.name }}</title>
   <meta name="description" content="Homepage of Andrew I. Park">
   <meta name="author" content="Andrew I. Park">
 
-  <!-- Mobile Specific Metas
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <!-- Mobile Specific Metas –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- FONT
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <!-- FONT –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <link href='https://fonts.googleapis.com/css?family=Raleway:400,300,600' rel='stylesheet' type='text/css'>
-
-  <!-- CSS
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link href="https://fonts.cdnfonts.com/css/helvetica-neue-55" rel="stylesheet">
+  
+  <!-- CSS –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <link rel="stylesheet" href={{ "/libs/external/skeleton/normalize.css" | prepend: site.baseurl }}>
   <link rel="stylesheet" href={{ "/libs/external/skeleton/skeleton.css" | prepend: site.baseurl }}>
   <link rel="stylesheet" href={{ "/libs/custom/my_css.css" | prepend: site.baseurl }}>
 
-  <!-- JQuery
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <!-- JQuery –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <script src={{ "/libs/external/jquery-3.1.1.min.js" | prepend: site.baseurl }}></script>
 
-  <!-- Font-Awesome
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <!-- Font-Awesome –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <link rel="stylesheet" href={{ "/libs/external/font-awesome-4.7.0/css/font-awesome.min.css" | prepend: site.baseurl }}>
 
-  <!-- Academicons
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <!-- Academicons –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <link rel="stylesheet" href={{ "/libs/external/academicons-1.8.6/css/academicons.min.css" | prepend: site.baseurl }}>
 
-  <!-- Skeleton tabs
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <!-- Skeleton tabs –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <link rel="stylesheet" href={{ "/libs/external/skeleton_tabs/skeleton-tabs.css" | prepend: site.baseurl }}>
   <script src={{ "/libs/external/skeleton_tabs/skeleton-tabs.js" | prepend: site.baseurl }}></script>
 
-  <!-- Timeline
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <!-- Timeline –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <link rel="stylesheet" href={{ "/libs/external/timeline.css" | prepend: site.baseurl }}>
 
-  <!-- Scripts
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <!-- Scripts –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <!--<link rel="stylesheet" href={{ "/libs/external/github-prettify-theme.css" | prepend: site.baseurl }}>-->
   <script src={{ "/libs/custom/my_js.js" | prepend: site.baseurl }}></script>
 
-  <!-- Favicon
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <!-- <link rel="icon" type="image/png" href={{ "/libs/icon.png" | prepend: site.baseurl }}>
-  <link rel="shortcut icon" type="image/png" href={{ "/libs/icon.png" | prepend: site.baseurl }}> -->
+  <!-- Favicon –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="icon" type="image/png" href={{ "/libs/icon.png" | prepend: site.baseurl }}>
+  <link rel="shortcut icon" type="image/png" href={{ "/libs/icon.png" | prepend: site.baseurl }}>
 
 </head>
-<body>
-  <!-- Google Tag Manager (noscript) -->
-  <!-- <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K5TX748"
-  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript> -->
-  <!-- End Google Tag Manager (noscript) -->
-
-  <!-- Primary Page Layout
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <div class="container">
-
-    <section class="header">
+<body style="background-color: rgb(245, 245, 245)">
+  <!-- Primary Page Layout –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <div class="container">     
+    <section class="header" style="position: relative">
       <div class="row">
-        <div class="three columns">
-          <a href="{{ site.baseurl }}/"><img class="u-max-full-width" src='{{ site.baseurl }}{{ site.data.main_info.profile_pic }}'></a>
-        </div>
-        <div class="nine columns main-description">
+        <div class="twelve columns main-description" style="margin-top: 12%">
             <h1>{{ site.data.main_info.name }}</h1>
-            <p>{{ site.data.main_info.title }}</p>
-            <p>{{ site.data.main_info.email }}</p>
+            <p style="margin-top: 3px; color: rgb(58, 58, 58);">{{ site.data.main_info.position }} at {{site.data.main_info.location}}</p>
+            <p style="margin-top: -5px; color: rgb(58, 58, 58);">{{ site.data.main_info.email }} 
             <p>
-
-              <span onclick="window.open('{{ site.data.main_info.linkedin }}')" style="cursor: pointer">
-                <i class="fa fa-linkedin-square" aria-hidden="true"></i>
-              </span>
-
-              <span onclick="window.open('{{ site.data.main_info.github }}')" style="cursor: pointer">
-                <i class="fa fa-github" aria-hidden="true"></i>
-              </span>
+              {% if site.data.main_info.linkedin != undefined %}
+                <span onclick="window.open('{{ site.data.main_info.linkedin }}')" style="cursor: pointer">
+                  <i class="fa fa-linkedin-square" aria-hidden="true"></i>
+                </span>
+              {% endif %} 
+              {% if site.data.main_info.github != undefined %}
+                <span onclick="window.open('{{ site.data.main_info.github }}')" style="cursor: pointer">
+                  <i class="fa fa-github" aria-hidden="true"></i>
+                </span></p>
+              {% endif %} 
             </p>
+        </div>
+        <div class="three columns" style="margin-left: -22%">
+          <img class="u-max-full-width" src='{{ site.baseurl }}{{ site.data.main_info.profile_pic }}' style="min-width: 130px; min-height: 190px;">
         </div>
       </div>
     </section>
-
-    <div class="navbar-spacer"></div>
-    <nav class="navbar">
-      <div class="container">
-        <ul class="navbar-list">
-          <li class="navbar-item"><a class="navbar-link" href={{ "/index.html#about" | prepend: site.baseurl }}>About</a></li>
-          <li class="navbar-item"><a class="navbar-link" href={{ "/index.html#education" | prepend: site.baseurl }}>Education</a></li>
-          <li class="navbar-item"><a class="navbar-link" href={{ "/index.html#projects" | prepend: site.baseurl }}>Projects</a></li>
-          <li class="navbar-item"><a class="navbar-link" href={{ "/index.html#resume" | prepend: site.baseurl }}>Vitae</a></li>
-        </ul>
-      </div>
-    </nav>
 
     {{ content}}
 
     <div class="footer">
       <div class="row">
-        <div class="four columns">
+        <div class="six columns">
           {{ site.data.main_info.name }}
         </div>
-        <div class="four columns">
-          based on <a href="https://web.media.mit.edu/~msaveski/">Martin Saveski</a>'s template
-        </div>
-        <div class="four columns">
-          <span onclick="window.open('{{ site.data.main_info.linkedin }}')" style="cursor: pointer">
-            <i class="fa fa-linkedin-square" aria-hidden="true"></i>
-          </span>
-          <span onclick="window.open('{{ site.data.main_info.github }}')" style="cursor: pointer">
-            <i class="fa fa-github" aria-hidden="true"></i>
-          </span>
+        <div class="six columns">
+          {% if site.data.main_info.linkedin != undefined %}
+            <span onclick="window.open('{{ site.data.main_info.linkedin }}')" style="cursor: pointer">
+              <i class="fa fa-linkedin-square" aria-hidden="true"></i>
+            </span>
+          {% endif %} 
+          {% if site.data.main_info.github != undefined %}
+            <span onclick="window.open('{{ site.data.main_info.github }}')" style="cursor: pointer">
+              <i class="fa fa-github" aria-hidden="true"></i>
+            </span></p>
+          {% endif %} 
         </div>
       </div>
     </div>
 
   </div>
 
-<!-- End Document
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<!-- End Document –––––––––––––––––––––––––––––––––––––––––––––––––– -->
 </body>
 </html>

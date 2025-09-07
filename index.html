@@ -3,22 +3,38 @@ layout: default
 ---
 <!-- ========== About ========== -->
 <div class="docs-section" id="about">
-  <h4>About</h4>
+  <!-- <div>
+    <h2 style="margin-bottom: 20px; display: inline-block">
+      👋🏻
+    </h2>
+    <div style="display: inline-block">
+      <h2 style="margin-bottom: 0px; display: block">
+        Hello,
+      </h2>  
+      <h2 style="margin-bottom: 20px; display: block">
+        Nice to meet you!
+      </h2>  
+  </div> -->
   <p>
-    Hello! I am an undergraduate stduent studying Electrical and Electronics Engineering at <a href="https://yonsei.ac.kr">Yonsei Unviersity</a> in Seoul, Korea.
+    <b>Hello! 👋🏻</b><br>I am a Ph.D. student studying at Electrical and Computer Engineering at <a href="https://ece.purdue.edu">Purdue Unviersity</a>.
   </p>
-  <p style="margin-bottom: 5px;">
-    My research interests lie in heterogeneous computing and software-hardware co-optimization. Specifically, I am interested in:
+  <p style="margin-bottom: 10px;">
+    My research interests lie in <span style="font-weight: bold;">Computer Architecture</span> and <span style="font-weight: bold;">Compilers</span>, especially for GPUs. <br>Specifically, I am interested in:
   </p>
   <ul style="padding-left: 10px;">
-    <li>
-      <span style="font-weight: bold;">CPU-GPU Integration</span>: I am interested in exploring different levels of integration between CPUs and GPUs to address fundamental inefficiencies in current architectures, where CPUs and GPUs operate as seperate devices. To resolve these problems, I am both interested in the hardware architectures and software optimization / scheduling policies of GPUs.
-    </li>
-    <li>
-      <span style="font-weight: bold;">GPU Compiler Optimization</span>: Programmers face serious complexities when optimizing their code for GPUs. I am particularly interested in developing compiler techniques that make GPU programming more accessible and enable better optimization across various GPU architectures.
-    </li>
+    {% for sub_topic in site.data.research_interest.sub_interest %}
+      <li>
+        <span style="font-weight: bold;">{{sub_topic.topic}}</span>: {{sub_topic.description}}
+          <ul style="padding-left: 10px;">
+            {% for sub_description in sub_topic.sub_description %}
+              <li>
+                {{sub_description}}
+              </li>  
+            {% endfor %}
+          </ul>
+      </li>  
+    {% endfor %}
   </ul>
-  Through my research, I aim to build a more powerful computing environment in response to emerging workloads.
   </p>
 </div>
 
@@ -26,9 +42,20 @@ layout: default
 <div class="docs-section" id="education">
   <h4>Education</h4>
   <div class="paper">
-    <p class="title"><b>Yonsei University<b style="float:right;">March 2019 - currently</b></b></p>
-
-    <p>B.S. in Electrical and Electronics Engineering</p>
+    <ul>
+      {% for exp in site.data.experience.experiences %}
+        {% if exp.category == "school" %}
+        <div style="margin-bottom: 10px">
+          <p class="title">
+            <b>{{ exp.place }}<b style="float:right;">{{ exp.time }}</b></b>
+          </p>
+          <p>{{ exp.position }}</p>
+        </div>  
+        
+        {% endif %}
+      {% endfor %}
+    </ul>
+    
     <p></p>
   </div>
 </div>
@@ -36,32 +63,44 @@ layout: default
 <!-- ========== PROJECTS ========== -->
 <div class="docs-section" id="projects">
   <h4>Projects</h4>
-  <div class="paper">
-    <p class="title"><b>Limitation of Optimization Targets on Loop Optimizers<b style="float:right;">March - June 2024</b></b></p>
-    <p>Undergraduate Thesis Student<a href="http://corelab.yonsei.ac.kr" style="float:right;">Corelab @ Yonsei University</a></p>
-    <p style="padding-left:10px;">LLVM's polyhedral optimizer, Polly, had difficulty optimizing matrix multiplication codes with dynamically bounded loops. This was because when Polly optimized its outer structures first, the transformation of (inner) nested for loops hindered effective optimization of the inner loops. To address this issue, I redesigned Polly to optimize smaller for loops first before proceeding to larger ones. As a result, a 3.5× speed improvement was achieved.</p>
-  </div>
-
-  <div class="paper">
-    <p class="title"><b>Development of near-data computing solution targeting MoE LLMs <b style="float:right;">June - Aug. 2024</b></b></p>
-    <p>Undergraduate Research Assistant<a href="http://corelab.yonsei.ac.kr" style="float:right;">CAPP Lab @ Seoul National University</a></p>
-    <p style="padding-left:10px;">
-      MoE models cannot be fully stored in GPU memory due to their large number of parameters, which leads to memory bottlenecks. To address this challenge, we developed <a href="https://arxiv.org/pdf/2405.18832">MoNDE</a>, a near-memory processing device.
-
-      In this project, I was responsible for implementing MoNDE on an FPGA to demonstrate its performance. I also designed a protocol enabling concurrent processing and memory transfer between the FPGA device and the host, and successfully integrated it into our system. This new protocol resulted in a 1.9× speed improvement.
-    </p>
-      
-    <p style="padding-left:10px;">
-      <span onclick="window.open(`https://github.com/bloominho/MoNDE`)" style="cursor: pointer">
-        <i class="fa fa-github" aria-hidden="true"></i>
-      </span>
-      <a href="https://arxiv.org/pdf/2405.18832">
-        Github
-      </a>
-    </p>
-    
-  </div>
-
+  {% for exp in site.data.experience.experiences %}
+      {% if exp.category == "project" %}
+        <div class="paper">
+          <p class="title"><b>{{exp.title}}<b style="float:right;">{{exp.time}}</b></b></p>
+          <p>{{exp.position}}<a href="{{exp.place_link}}" style="float:right;"> {{exp.sub_place}} @ {{exp.place}}</a></p>
+          <p style="padding-left:10px;">{{exp.explanation}}</p>
+        {% if exp.github_y == "y" %}
+          <p style="padding-left:10px;">
+            <span onclick="window.open(`{{exp.github_url}}`)" style="cursor: pointer">
+              <i class="fa fa-github" aria-hidden="true"></i>
+            </span>
+            <a href="{{exp.github_url}}">
+              Github
+            </a>
+          </p>
+        {% endif %}
+        </div>
+      {% endif %}
+    {% endfor %}
+  <h5 style="margin-bottom: 10px">Other Projects</h5>
+    {% for exp in site.data.experience.experiences %}
+      {% if exp.category == "project_other" %}
+        <div class="paper">
+          <p class="title"><b>{{exp.title}}<b style="float:right;">{{exp.time}}</b></b></p>
+          <p style="padding-left:10px;">{{exp.explanation}}</p>
+        {% if exp.github_y == "y" %}
+          <p style="padding-left:10px;">
+            <span onclick="window.open(`{{exp.github_url}}`)" style="cursor: pointer">
+              <i class="fa fa-github" aria-hidden="true"></i>
+            </span>
+            <a href="{{exp.github_url}}">
+              Github
+            </a>
+          </p>
+        {% endif %}
+        </div>
+      {% endif %}
+    {% endfor %}
 </div>
 
 <!-- ========== RESUME ========== -->
@@ -73,19 +112,33 @@ layout: default
   <!-- The Timeline -->
   <ul class="timeline">
     {% for exp in site.data.experience.experiences %}
-    <li>
-      {% if exp.category == "work" %}
-      <div class="direction-l">
+      {% if exp.category == "school" or exp.category == "project" or exp.category == "work" %}
+      <li>
+        {% if exp.category == "school" %}
+          <div class="direction-r">
         {% else %}
-        <div class="direction-r">
-          {% endif %}
-          <div class="flag-wrapper">
-            <span class="flag">{{ exp.place }}</span>
-            <span class="time-wrapper"><span class="time">{{ exp.time }}</span></span>
-          </div>
-          <div class="desc"><b>{{ exp.title }}</b> <br /> {{ exp.subtitle }}</div>
+          <div class="direction-l">
+        {% endif %}
+            <div class="flag-wrapper">
+              <span class="flag">{{ exp.place }}</span>
+              <span class="time-wrapper"><span class="time">{{ exp.time }}</span></span>
+            </div>
+            <div class="desc">
+              <b>
+                {{ exp.position }}
+                <br /> 
+              </b> 
+              {% if exp.sub_place != undefined %} 
+                <b>@ {{ exp.sub_place }}</b> <br /> 
+              {% endif %} 
+              {% if exp.subtitle != undefined %} 
+                {{ exp.subtitle }}
+                <br /> 
+              {% endif %} 
+            </div>
         </div>
-    </li>
+      </li>
+      {% endif %}
     {% endfor %}
   </ul>
 </div>
