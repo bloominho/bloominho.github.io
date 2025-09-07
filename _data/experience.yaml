@@ -16,7 +16,7 @@ experiences:
     github_url: "https://github.com/bloominho/MoNDE"
     category: "project"
 
-  - title: "Limitation of Optimization Targets on Loop Optimizers"
+  - title: "Enhancing Polly's Optimization Target Detecting Algorithm"
     time: "March - June 2024"
     position: "Undergraduate Thesis Student"
     place: "Yonsei University"
