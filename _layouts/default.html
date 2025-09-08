@@ -14,6 +14,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+  <!-- ICON –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
     
   <!-- CSS –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <link rel="stylesheet" href={{ "/libs/external/skeleton/normalize.css" | prepend: site.baseurl }}>
@@ -50,10 +53,10 @@
   <div class="container">     
     <section class="header" style="position: relative">
       <div class="row">
-        <div class="twelve columns main-description" style="margin-top: 12%">
+        <div class="twelve columns main-description" style="margin-top: 14%">
             <h1>{{ site.data.main_info.name }}</h1>
             <p style="margin-top: 3px; color: rgb(58, 58, 58);">{{ site.data.main_info.position }} at {{site.data.main_info.location}}</p>
-            <p style="margin-top: -5px; color: rgb(58, 58, 58);">{{ site.data.main_info.email }} 
+            <p style="margin-top: -5px; color: rgb(58, 58, 58);">{{ site.data.main_info.email }} </p>
             <p>
               {% if site.data.main_info.linkedin != undefined %}
                 <span onclick="window.open('{{ site.data.main_info.linkedin }}')" style="cursor: pointer">
@@ -63,8 +66,11 @@
               {% if site.data.main_info.github != undefined %}
                 <span onclick="window.open('{{ site.data.main_info.github }}')" style="cursor: pointer">
                   <i class="fa fa-github" aria-hidden="true"></i>
-                </span></p>
+                </span>
               {% endif %} 
+              <span onclick="window.open('/assets/cv/CV_ANDREW_PARK.pdf')" style="cursor: pointer">
+                <i class="bi bi-file-earmark-person"></i>
+              </span>
             </p>
         </div>
         <div class="three columns" style="margin-left: -22%">
